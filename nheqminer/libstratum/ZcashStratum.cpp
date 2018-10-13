@@ -308,10 +308,10 @@ ZcashJob* ZcashJob::clone() const
 void ZcashJob::setTarget(std::string target)
 {
     if (target.size() > 0) {
-        serverTarget = UintToArith256(uint256S(target))/1000;
+        serverTarget = UintToArith256(uint256S(target)1000000);
     } else {
 		BOOST_LOG_TRIVIAL(debug) << "miner | New job but no server target, assuming powLimit";
-		serverTarget = UintToArith256(uint256S("0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f"));
+		serverTarget = UintToArith256(uint256S("0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f"))/1000000;
     }
 }
 
